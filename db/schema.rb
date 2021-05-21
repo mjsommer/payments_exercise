@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_20_233113) do
+ActiveRecord::Schema.define(version: 2021_05_21_212615) do
 
   create_table "loans", force: :cascade do |t|
     t.decimal "funded_amount", precision: 8, scale: 2
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_05_20_233113) do
     t.decimal "payment_amount", precision: 8, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "payment_date", default: "2021-05-21", null: false
     t.index ["loan_id"], name: "index_payments_on_loan_id"
   end
 
