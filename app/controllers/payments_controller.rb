@@ -11,4 +11,8 @@ class PaymentsController < ActionController::API
   def show
     render json: Payment.find(params[:id])
   end
+
+  def create
+    Payment.create!(loan_id: params[:loan_id] ,payment_amount: params[:amount], payment_date: params[:payment_date])
+  end
 end
