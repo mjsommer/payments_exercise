@@ -4,10 +4,12 @@ class PaymentsController < ActionController::API
     render json: 'not_found', status: :not_found
   end
 
+  #All payments, for a specific Loan ID
   def index
-    render json: Payment.all
+    render json: Payment.where(loan_id: params[:loan_id])
   end
 
+  #Individual payment
   def show
     render json: Payment.find(params[:id])
   end

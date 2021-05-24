@@ -4,10 +4,12 @@ class LoansController < ActionController::API
     render json: 'not_found', status: :not_found
   end
 
+  #All loans
   def index
     render json: Loan.all
   end
 
+  #Individual loan
   def show
     render json: Loan.find(params[:id])
   end
